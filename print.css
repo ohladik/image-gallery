@@ -1,0 +1,52 @@
+@media print {
+    /* Print style */
+    /*hide all content except posts*/
+    nav, .view-settings, .posts-message, .load-more-button, .post-edit-container, .post-heart-container, .date,
+        .posts-container-bottom {
+        display: none !important;
+    }
+
+    /*remove padding because navigation is hidden*/
+    .content {
+        padding-top: 0;
+    }
+
+    body {
+        /*include all background images by default*/
+        -webkit-print-color-adjust: exact !important;   /* Chrome, Safari */
+        color-adjust: exact !important;                 /*Firefox*/
+    }
+
+    .posts-container {
+        /*white background looks better when printing (also saves ink/toner)*/
+        background-color: white !important;
+        padding: 0;
+        display: block;
+    }
+
+    /*remove all hover effects*/
+    body *:hover {
+        pointer-events: none !important;
+    }
+
+    /*posts can't be stretched over multiple pages*/
+    .post {
+        margin: 0 auto;
+        page-break-before: always !important;
+    }
+}
+
+/*orientation specific styles*/
+@media print and (orientation:landscape) {
+    .post {
+        top: 15%;
+        transform: translateY(15%);
+    }
+}
+
+@media print and (orientation:portrait) {
+    .post {
+        top: 40%;
+        transform: translateY(40%);
+    }
+}
