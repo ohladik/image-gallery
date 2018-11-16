@@ -2,6 +2,9 @@
 
 > Built using PHP and MySQL
 
+![](demo_light.gif)
+![](demo_dark.gif)
+
 ## Prerequisites
 
 LAMP environment, e.g. [XAMPP](https://www.apachefriends.org).
